@@ -1,0 +1,132 @@
+.ring-spin1 {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 70%,
+    cyan 85%,
+    white 100%
+  );
+  animation: spin-ring1 2.5s linear infinite;
+}
+
+@keyframes spin-ring1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ring-spin {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 70%,
+    rgb(245, 221, 3) 85%,
+    white 100%
+  );
+  animation: spin-ring 3.5s linear infinite;
+}
+
+@keyframes spin-ring {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060b1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff;
+}
+
+/* Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Carousel scroll snap */
+.snap-x {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+}
+.snap-x::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.snap-item {
+  scroll-snap-align: center;
+}
+
+/* Typing cursor */
+.typing-cursor::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+  margin-left: 5px;
+  color: #00d4ff;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* WhatsApp Glow */
+.whatsapp-glow {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+  animation: pulse-green 2s infinite;
+}
+@keyframes pulse-green {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* Custom Shapes */
+.blob {
+  position: absolute;
+  background: linear-gradient(135deg, #00d4ff 0%, #0055ff 100%);
+  filter: blur(80px);
+  opacity: 0.1;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* Mobile Menu */
+#mobile-menu {
+  transition: all 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+#mobile-menu.active {
+  transform: translateX(0);
+}
